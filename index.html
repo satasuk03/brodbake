@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#FFF3E2" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="BrodBake" />
+    <title>BrodBake · อบซาวร์โดว์ 2-3 วัน ใน 5 นาที</title>
+    <meta name="description" content="เกมทำขนมปังซาวร์โดว์ 3D แสนน่ารัก ผสม นวด พับ อบ แล้วหั่นเสิร์ฟ ใน 5 นาที · A cozy 3D sourdough game: mix, knead, fold, bake and slice your loaf in 5 minutes." />
+
+    <!-- Open Graph / LINE / Facebook / X. Absolute URLs come from SITE_URL at build time (vite.config.ts) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BrodBake" />
+    <meta property="og:title" content="BrodBake · อบซาวร์โดว์ 2-3 วัน ใน 5 นาที" />
+    <meta property="og:description" content="เกมทำขนมปังซาวร์โดว์ 3D แสนน่ารัก ผสม นวด พับ อบ แล้วหั่นเสิร์ฟ ใน 5 นาที · A cozy 3D sourdough game: bake a 2-3 day loaf in 5 minutes." />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:url" content="https://satasuk03.github.io/brodbake/" />
+    <meta property="og:image" content="https://satasuk03.github.io/brodbake/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BrodBake: a smiling clay dough ball and its starter jar on a pastel kitchen counter" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BrodBake · A 2-3 day sourdough, in 5 minutes" />
+    <meta name="twitter:description" content="A cozy 3D sourdough game: mix, knead, fold, bake and slice your loaf in 5 minutes." />
+    <meta name="twitter:image" content="https://satasuk03.github.io/brodbake/og-image.png" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <!-- only the intro's fonts: Mali 700 (title, buttons) in the Thai + Latin subsets; 500 loads on demand -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="./assets/mali-thai-700-normal-DjdebB47.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="./assets/mali-latin-700-normal-UA1FHiAM.woff2" />
+    <style>#splash{z-index:99;text-align:center;color:#5a3a2e;background:#fff3e2;place-content:center;display:grid;position:fixed;inset:0}#splash .sp-title{color:#ff5c8a;-webkit-text-stroke:7px #5a3a2e;paint-order:stroke fill;text-shadow:0 6px #5a3a2e;font:700 60px/1.25 Mali,Noto Sans Thai Looped,Thonburi,system-ui,sans-serif}#splash .sp-sub{margin-top:14px;font:700 18px/1.5 Mali,Noto Sans Thai Looped,Thonburi,system-ui,sans-serif}</style>
+    <script type="module" crossorigin src="./assets/index-DAxAbvSp.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-DK3Fl9T5.js">
+    <link rel="modulepreload" crossorigin href="./assets/signals.module-Y1LIfA4P.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-AuA31Fdi.css">
+    <link rel="modulepreload" crossorigin fetchpriority="low" href="./assets/scene-XX32NY0L.js">
+    <link rel="modulepreload" crossorigin fetchpriority="low" href="./assets/three-iZJnIY63.js">
+    <link rel="modulepreload" crossorigin fetchpriority="low" href="./assets/engine-Bk9cUlVK.js">
+    <link rel="modulepreload" crossorigin fetchpriority="low" href="./assets/sceneManager-CmMSWZu8.js">
+    <link rel="modulepreload" crossorigin fetchpriority="low" href="./assets/starterJar-LK2_lbx-.js">
+    <link rel="modulepreload" crossorigin fetchpriority="low" href="./assets/pool-C7QLQIvZ.js">
+  </head>
+  <body>
+    <div id="splash"><div class="sp-title">BrodBake</div><div class="sp-sub" id="splash-sub">อบซาวร์โดว์ 2-3 วัน ใน 5 นาที</div></div>
+    <script>
+      try {
+        var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('brodbake.lang');
+        if (l === 'en') document.getElementById('splash-sub').textContent = 'A 2-3 day sourdough, in 5 minutes';
+      } catch (e) {}
+    </script>
+    <div id="frame">
+      <div id="app"></div>
+      <div id="hint-layer"></div>
+      <div id="hud"></div>
+    </div>
+    <script>
+      // repeat-visit cache for hashed assets (public/sw.js); never on local/dev hosts
+      if ('serviceWorker' in navigator && location.protocol === 'https:' && !/^(localhost|127\.|10\.|192\.168\.)/.test(location.hostname)) {
+        addEventListener('load', function () { navigator.serviceWorker.register('./sw.js').catch(function () {}); });
+      }
+    </script>
+  </body>
+</html>

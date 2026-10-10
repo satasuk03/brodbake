@@ -1,0 +1,16 @@
+{
+  "name": "BrodBake · อบซาวร์โดว์ใน 5 นาที",
+  "short_name": "BrodBake",
+  "description": "A cozy 3D sourdough game: bake a 2-3 day loaf in 5 minutes.",
+  "lang": "th",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#FFF3E2",
+  "theme_color": "#FFF3E2",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
